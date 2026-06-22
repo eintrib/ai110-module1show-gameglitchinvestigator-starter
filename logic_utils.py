@@ -12,13 +12,24 @@ def parse_guess(raw: str):
     raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
 
 
+# I worked with Claude (an AI assistant) to fix the high/low hint bug in this
+# function. The original code in app.py turned the secret into a string on even
+# attempts, which made it compare guesses alphabetically instead of numerically
+# (e.g. "9" > "100"), so the game told me to go HIGHER when it should have said
+# LOWER. The "Too High"/"Too Low" messages were also reversed. Claude walked me
+# through the cause step by step, then I had it move this function here, drop the
+# string-comparison path, and fix the messages. We also added regression tests.
 def check_guess(guess, secret):
     """
     Compare guess to secret and return (outcome, message).
 
     outcome examples: "Win", "Too High", "Too Low"
     """
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+    if guess == secret:
+        return "Win", "🎉 Correct!"
+    if guess > secret:
+        return "Too High", "📈 Go LOWER!"
+    return "Too Low", "📉 Go HIGHER!"
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):

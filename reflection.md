@@ -8,31 +8,45 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
 
+  - no matter the mode, the text it static and does not change. 
+  - the enter button does not work to submit
+  - even though the number is between 1 and 100, the guesser still said   higher when 100 was entered and lower when 1 was entered
+  - 
+
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
-| Input | Expected Behavior | Actual Behavior | Console Output / Error |
-|-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+|    Input    | Expected Behavior | Actual Behavior | Console Output / Error |
+|-------------|-------------------|-----------------|------------------------|
 
----
+
+
 
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+- I used Claude and Gemini.
+
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+
+- The AI suggested that the high/low hint string outputs were inverted. It suggested refractoring the check_guess function into logic_utils.py removing the broken code and replacing it with the correct logical operation. 
+
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+
+- N/A
 
 ---
 
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
+
+- I went through the code and the ran the app and walked through the specific fix I just made. 
+
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
+  
 - Did AI help you design or understand any tests? How?
 
 ---
